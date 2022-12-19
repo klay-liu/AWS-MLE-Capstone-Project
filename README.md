@@ -3,7 +3,7 @@
 # Inventory Monitoring at Distribution Centers
 
 ### Counting objects from the bin-images
-In this project, we will build, train and deploy a deep learning model for image classification to count the number of objects from (Amazon Bin Image Dataset)[https://registry.opendata.aws/amazon-bin-imagery/], which contains over 500,000 images and metadata from bins of a pod in an operating Amazon Fulfillment Center,  by using AWS Sagemaker. 
+In this project, we will build, train and deploy a deep learning model for image classification to count the number of objects from [Amazon Bin Image Dataset](https://registry.opendata.aws/amazon-bin-imagery/), which contains over 500,000 images and metadata from bins of a pod in an operating Amazon Fulfillment Center,  by using AWS Sagemaker. 
 
 ## Project Set Up and Installation
 1. Clone this repo in AWS Sagemaker Instance or Sagemaker Studio
@@ -13,13 +13,13 @@ In this project, we will build, train and deploy a deep learning model for image
 ## Dataset
 
 ### Overview
-The dataset we currently use is sourced from the (Amazon Bin Image Dataset)[https://registry.opendata.aws/amazon-bin-imagery/], which contains over 500,000 images and metadata from bins of a pod in an operating Amazon Fulfillment Center. In this project, Udacity provides 10.4K images with a json metadata file which contains upto 5 objects in the bins. We will create a folder called train_data, and download training data and arranges it in subfolders according to the json file provided by Udacity. Each of these subfolders contain images where the number of objects is equal to the name of the folder. For instance, all images in folder 1 has images with 1 object in them. Finally, we will divide the train_data into training, test and validation sets.
+The dataset we currently use is sourced from the [Amazon Bin Image Dataset](https://registry.opendata.aws/amazon-bin-imagery/), which contains over 500,000 images and metadata from bins of a pod in an operating Amazon Fulfillment Center. In this project, Udacity provides 10.4K images with a json metadata file which contains upto 5 objects in the bins. We will create a folder called train_data, and download training data and arranges it in subfolders according to the json file provided by Udacity. Each of these subfolders contain images where the number of objects is equal to the name of the folder. For instance, all images in folder 1 has images with 1 object in them. Finally, we will divide the train_data into training, test and validation sets.
 
 ### Access
-If you want to choose the subset provided in `file_list.json`, you need to clone this repo and execute the notebook `sagemaker.ipynb`. If not, you can feel free to access the open source data from (Amazon Bin Image Dataset)[https://registry.opendata.aws/amazon-bin-imagery/].
+If you want to choose the subset provided in `file_list.json`, you need to clone this repo and execute the notebook `sagemaker.ipynb`. If not, you can feel free to access the open source data from [Amazon Bin Image Dataset](https://registry.opendata.aws/amazon-bin-imagery/).
 
 ## Model Training
-Our dataset only accounts for 2% of the total data in the  (Amazon Bin Image Dataset)[https://registry.opendata.aws/amazon-bin-imagery/]. We split them into train, test and validation dataset with 80-10-10.
+Our dataset only accounts for 2% of the total data in the  [Amazon Bin Image Dataset](https://registry.opendata.aws/amazon-bin-imagery/). We split them into train, test and validation dataset with 80-10-10.
 we use the pre-trained model Resnet50 to train our image classification model to identify the number of objects inside the bin. Resnet50 is a commonly used CNN model in computer vision application, which won the 1st place on the ILSVRC 2015 classification task.
 
 - Training Job in Sagemaker
@@ -165,9 +165,8 @@ def predict_fn(input_object, model):
 ## Machine Learning Pipeline
 
 1. *Data Acquiring and Preparation*
-    1. Downloading from 
+    1. Downloading from [Amazon Bin Image Dataset](https://registry.opendata.aws/amazon-bin-imagery/)
     
-       [Amazon Bin Image Dataset]: https://registry.opendata.aws/amazon-bin-imagery/
     2. Splitting them into train, test and validation
     3. Uploading divided data to S3 bucket 
     
@@ -208,7 +207,7 @@ def predict_fn(input_object, model):
 
 
 
-`proposal.pdf` is a proposal for pre-requisite *Capstone Proposal* project whose review can be see (here)[ https://review.udacity.com/#!/reviews/3865533 ]
+`proposal.pdf` is a proposal for pre-requisite *Capstone Proposal* project whose review can be see [here]( https://review.udacity.com/#!/reviews/3865533)
 
 
 
