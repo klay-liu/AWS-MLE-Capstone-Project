@@ -56,7 +56,7 @@ The minimum test loss will be the basis for finding the best parameters. The *be
 ```
 Note that the instance for the tuning job is `ml.g4dn.12xlarge` to accelerate the hyperparameter tuning task. But for the cost saving, we could use `ml.g4dn.xlarge` 
 
-![Hyperparameter Tuner Jobs](./img/Hyperparameter Tuner Jobs.png)
+![Hyperparameter Tuner Jobs](https://github.com/klay-liu/AWS-MLE-Capstone-Project/blob/main/img/Hyperparameter%20Tuner%20Jobs.png)
 
 - Debugging/Profiling Job 
 
@@ -64,15 +64,15 @@ After getting the best hyperparameters with hyperparameter tuning, we will use m
 
 SageMaker Debugger auto generated a SageMaker Debugger Profiling Report for the training jobs. The report provides summary of training job, system resource usage statistics, framework metrics, rules summary, and detailed analysis from each rule. To implement Sagemaker Debugger/Profiler, we need to add hooks to train and test the model after importing necessary libraries. Creating hook and registering the model will give us ability to select rules such as overfit, poor_weight_initialization, and profiler_report. 
 
-![Debugger Framework metrics summary](./img/Debugger Framework metrics summary.png)
+![Debugger Framework metrics summary](https://github.com/klay-liu/AWS-MLE-Capstone-Project/blob/main/img/Debugger%20Framework%20metrics%20summary.png)
 
 The Debugger Framework metrics summary shows the time spent on the TRAIN phase, the EVAL phase, and others. Our training job spent quite a significant amount of time (67.62%) in phase "others". The main reason is that it takes more time to download the data from S3 and to download the ResNet50 model.
 
-![Rule Summary](./img/Rule Summary.png)
+![Rule Summary](https://github.com/klay-liu/AWS-MLE-Capstone-Project/blob/main/img/Rule%20Summary.png)
 
 Rule Summary shows a profiling summary of the Debugger built-in rules. The table is sorted by the rules that triggered the most frequently. During our training job, the GPUMemoryIncrease rule was the most frequently triggered. It processed 1068 datapoints and was triggered 14 times. Hence we can consider choosing a larger instance with more memory. The 2nd LowGPUUtilization shows our training job is underutilizing the instance(`ml.g4dn.12xlarge`). We may want to consider to either switch to a smaller instance type or to increase the batch size.
 
-![CrossEntropyLoss Output per step](./img/CrossEntropyLoss Output per step .png)
+![CrossEntropyLoss Output per step](https://github.com/klay-liu/AWS-MLE-Capstone-Project/blob/main/img/CrossEntropyLoss%20Output%20per%20step%20.png)
 
  I set save_interval up as 10 steps interval for training and 1 for validation as we want to record more data. We see that the cross-entropy loss in the validation set fluctuates widely, which may be related to the large difference between the images in the validation set and the training set.
 
