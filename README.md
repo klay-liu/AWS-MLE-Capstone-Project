@@ -3,7 +3,7 @@
 # Inventory Monitoring at Distribution Centers
 
 ### Counting objects from the bin-images
-In this project, we will build, train and deploy a deep learning model for image classification to count the number of objects from Amazon Bin Image Dataset (https://registry.opendata.aws/amazon-bin-imagery/), which contains over 500,000 images and metadata from bins of a pod in an operating Amazon Fulfillment Center,  by using AWS Sagemaker. 
+In this project, we will build, train and deploy a deep learning model for image classification to count the number of objects from [Amazon Bin Image Dataset ]https://registry.opendata.aws/amazon-bin-imagery/, which contains over 500,000 images and metadata from bins of a pod in an operating Amazon Fulfillment Center,  by using AWS Sagemaker. 
 
 ## Project Set Up and Installation
 1. Clone this repo in AWS Sagemaker Instance or Sagemaker Studio
@@ -191,13 +191,25 @@ def predict_fn(input_object, model):
 
 ## Script Files used
 `hpo.py` for hyperparameter tuning jobs where we train the model for multiple time with different hyperparameters and search for the best one based on loss metrics.
+
 `train.py` for training only.
+
+
+
 `finetuner-debugger.py` for really training the model with the best parameters getting from the previous tuning jobs, and put debug and profiler hooks for debugging purpose.
+
+
+
 `inference.py` to using the trained model as inference and serializing the data before it passes to the endpoint for prediction.
+
+
+
 `sagemakery.ipynb` is a submission script that can create Hyperparameter Tuning job, Training job and Endpoints.
 
-`proposal.pdf` is a proposal for pre-requisite *Capstone Proposal* project whose review can be see 
 
-[here]: https://review.udacity.com/#!/reviews/3865533
+
+`proposal.pdf` is a proposal for pre-requisite *Capstone Proposal* project whose review can be see https://review.udacity.com/#!/reviews/3865533 
+
+
 
 `project report.pdf`: The document for the Capstone project.
